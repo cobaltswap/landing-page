@@ -1,19 +1,21 @@
 {
   "name": "cobalt-landing-page",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "jest --coverage"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/oseunabiola/cobalt-landing-page.git"
+  "dependencies": {
+    "next": "12.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
-  "author": "Oluwaseun ABIOLA",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oseunabiola/cobalt-landing-page/issues"
-  },
-  "homepage": "https://github.com/oseunabiola/cobalt-landing-page#readme"
+  "devDependencies": {
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.1.6",
+    "sass": "^1.53.0"
+  }
 }
