@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import CTA_section from "../components/landing-page/CTA-section";
 import FAQ from "../components/landing-page/FAQ";
@@ -8,6 +9,9 @@ import Security from "../components/landing-page/Security";
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>CobaltSwap</title>
+      </Head>
       <Hero />
       <Illustrations />
       <CTA_section />
