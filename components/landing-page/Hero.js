@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function Hero() {
   return (
     <section id="home" className="hero bg-primary-local d-flex flex-column text-center">
@@ -9,9 +11,11 @@ function Hero() {
           Carry out your transactions with ease just as you want it.
         </div>
         <div className="hero__cta d-grid gap-2 col-12 col-md-4 col-lg-3 mx-auto my-2">
-          <a href="#" className="col-md-12 btn btn-lg btn-secondary-local mx-3" role="button">
-            Get Started
-          </a>
+          <Link href="#">
+            <a className="col-md-12 btn btn-lg btn-secondary-local mx-3" role="button">
+              Get Started
+            </a>
+          </Link>
         </div>
       </div>
     </section>

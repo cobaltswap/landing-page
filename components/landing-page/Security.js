@@ -1,3 +1,6 @@
+import Image from "next/image";
+import securityLockImage from "../../public/assets/Security lock.png";
+
 function Security() {
   return (
     <section className="landing-page-security py-4 py-md-5">
@@ -10,7 +13,12 @@ function Security() {
           </p>
         </div>
         <div className="order-0 col-md-4 col-lg-4 mb-5 mb-md-0">
-          <img className="img-fluid" src="./Security lock.png" alt="Security code lock" />
+          <Image
+            className="img-fluid"
+            src={securityLockImage}
+            alt="Security code lock"
+            layout="responsive"
+          />
         </div>
       </div>
     </section>

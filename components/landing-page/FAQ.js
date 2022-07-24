@@ -1,3 +1,6 @@
+import Image from "next/image";
+import rafiki from "../../public/assets/rafiki.png";
+
 const faqs = [
   {
     id: "one",
@@ -23,41 +26,41 @@ const faqs = [
 
 function FAQ() {
   return (
-    <section id="landing-page-faq" className="mb-5 py-5">
+    <section id="faq" className="landing-page-faq mb-5 py-5">
       <div className="container">
         <div className="d-flex">
           <div className="faqs col-12 col-md-7">
             <h2 className="mb-3 mb-md-4 fw-bold text-primary-local">Your questions, answered</h2>
-            <div class="accordion accordion-flush" id="faqAccordion">
+            <div className="accordion accordion-flush" id="faqAccordion">
               {faqs.length &&
                 faqs.map((faq, key) => (
-                  <>
-                    <div class="accordion-item" key={key}>
-                      <h2 class="accordion-header" id={`faq-header-${faq?.id}`}>
-                        <button
-                          class="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target={`#${faq?.id}`}
-                          aria-expanded="true"
-                          aria-controls={`collapse-${faq?.id}`}
-                        >
-                          {faq?.question}
-                        </button>
-                      </h2>
-                      <div
-                        id={faq?.id}
-                        class="accordion-collapse collapse"
-                        aria-labelledby={`faq-header-${faq?.id}`}
-                        data-bs-parent="#faqAccordion"
+                  <div className="accordion-item" key={key}>
+                    <h2 className="accordion-header" id={`faq-header-${faq?.id}`}>
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target={`#${faq?.id}`}
+                        aria-expanded="true"
+                        aria-controls={`collapse-${faq?.id}`}
                       >
-                        <div class="accordion-body">{faq?.answer}</div>
-                      </div>
+                        {faq?.question}
+                      </button>
+                    </h2>
+                    <div
+                      id={faq?.id}
+                      className="accordion-collapse collapse"
+                      aria-labelledby={`faq-header-${faq?.id}`}
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div className="accordion-body">{faq?.answer}</div>
                     </div>
-                  </>
+                  </div>
                 ))}
             </div>
-            <div className="faq-illustration"></div>
+          </div>
+          <div className="faq-illustration">
+            <Image src={rafiki} alt="rafiki" className="img-fluid" />
           </div>
         </div>
       </div>

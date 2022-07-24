@@ -1,3 +1,8 @@
+import Image from "next/image";
+import illustration1 from "../../public/assets/illustration1.png";
+import illustration2 from "../../public/assets/illustration2.png";
+import illustration3 from "../../public/assets/illustration3.png";
+
 export default function Illustrations() {
   return (
     <section id="about" className="landing-page-illustrations py-5">
@@ -14,12 +19,20 @@ export default function Illustrations() {
             </p>
           </div>
           <div className="illustration__img col-12 col-md-5 ms-auto mb-5">
-            <img className="img-fluid rounded float-end" src="./ill-1.png" alt="Illustration 1" />
+            <Image
+              className="img-fluid rounded float-end"
+              src={illustration1}
+              alt="Illustration 1"
+            />
           </div>
         </div>
         <div className="illustration row d-flex align-items-md-center justify-content-mb-between mb-5 pb-md-5">
           <div className="illustration__img col-12 col-md-5 me-auto mb-5">
-            <img className="img-fluid rounded float-end" src="./ill-1.png" alt="Illustration 1" />
+            <Image
+              className="img-fluid rounded float-end"
+              src={illustration2}
+              alt="Illustration 2"
+            />
           </div>
           <div className="illustration__text col-12 col-md-6 ms-auto">
             <div className="d-flex align-items-center mb-3">
@@ -47,7 +60,11 @@ export default function Illustrations() {
             </p>
           </div>
           <div className="illustration__img col-12 col-md-5 ms-auto mb-5">
-            <img className="img-fluid rounded float-end" src="./ill-1.png" alt="Illustration 1" />
+            <Image
+              className="img-fluid rounded float-end"
+              src={illustration3}
+              alt="Illustration 3"
+            />
           </div>
         </div>
       </div>
