@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 import { PrimaryButton } from "../../components/ui/Button";
@@ -25,11 +26,11 @@ export default function ConfirmEmail() {
       try {
         const result = await fetch(url);
         const data = await result.json();
+
         if (!result.ok) throw new Error(data.data.status || resultMap.failed);
 
         if (data.success) setValidationResult(data.data.status);
       } catch (error) {
-        console.log("🚀 ~ file: index.js ~ line 36 ~ checkVerificationLink ~ error", error);
         setValidationResult(error.message);
       } finally {
         setIsLoading(false);
@@ -67,7 +68,9 @@ function EmailValidationSuccessful() {
       </div>
       <p className="mb-4">Your email address was successfully authenticated.</p>
       <div className="d-grid">
-        <PrimaryButton>Chat with us on Whatsapp</PrimaryButton>
+        <PrimaryButton>
+          <Link href={"https://wa.me/2347034834338"}>Chat with us on Whatsapp</Link>
+        </PrimaryButton>
       </div>
     </EmailVerificationWrapper>
   );
@@ -100,7 +103,9 @@ function EmailValidationTokenExpired() {
 function EmailVerificationWrapper({ children }) {
   return (
     <div className="fullscreen d-flex align-items-center justify-content-center bg-primary-local">
-      <div className="col-10 col-sm-8 col-md-4 p-4 bg-white text-dark text-center rounded-3">{children}</div>
+      <div className="col-10 col-sm-8 col-md-4 p-4 bg-white text-dark text-center rounded-3">
+        {children}
+      </div>
     </div>
   );
 }

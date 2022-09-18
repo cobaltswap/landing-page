@@ -3,18 +3,19 @@ import { validateEmail, validateName } from "../../utils/validation/validate-use
 
 import { SecondaryButton } from "../ui/Button.jsx";
 
+class CustomError {
+  constructor(message) {
+    this.name = "CustomError";
+    this.message = message;
+  }
+}
+
 function SignupForm({ setShouldDisplayDialog, setDialogText }) {
   const [formValues, setFormValues] = useState({});
   const [formErrors, setFormErrors] = useState({});
+  const [submitError, setSubmitError] = useState(undefined);
   const [touched, setTouched] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  class CustomError {
-    constructor(message) {
-      this.name = "CustomError";
-      this.message = message;
-    }
-  }
 
   function validate({ firstName, lastName, email }) {
     const errors = {
@@ -36,6 +37,7 @@ function SignupForm({ setShouldDisplayDialog, setDialogText }) {
 
   async function handleSignup(e) {
     e.preventDefault();
+    setSubmitError(undefined);
     setFormErrors(Object.assign({}, formErrors, validate(formValues)));
 
     if (formErrors.firstName || formErrors.lastName || formErrors.email) return;
@@ -55,6 +57,7 @@ function SignupForm({ setShouldDisplayDialog, setDialogText }) {
       );
     } catch (error) {
       console.log(error);
+      setSubmitError(error.message);
     } finally {
       setIsSubmitting(false);
     }
@@ -62,6 +65,12 @@ function SignupForm({ setShouldDisplayDialog, setDialogText }) {
 
   return (
     <form className="signup-form" onSubmit={handleSignup}>
+      {submitError && (
+        <div className="text-center alert alert-danger mb-4" role="alert">
+          {submitError}
+        </div>
+      )}
+
       <TextInput
         label={"First Name"}
         name="firstName"

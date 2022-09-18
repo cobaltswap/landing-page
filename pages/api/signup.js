@@ -12,6 +12,7 @@ export default async function signUp(req, res) {
 
     const customer = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
 
+    customer.lastName = customer.lastName.toUpperCase();
     customer.emailVerified = false;
     customer.enrollmentDate = new Date();
     customer.enrollmentIP = req.ips;

@@ -7,7 +7,7 @@ export default function Signup() {
   const [dialogText, setDialogText] = useState(undefined);
 
   return (
-    <article className="fullscreen bg-primary-local">
+    <article className="sign-up fullscreen text-white">
       {shouldDisplayDialog ? (
         <Dialog setShouldDisplayDialog={setShouldDisplayDialog}>{dialogText}</Dialog>
       ) : null}

@@ -5,9 +5,9 @@ import illustration3 from "../../public/assets/illustration3.png";
 
 export default function Illustrations() {
   return (
-    <section id="about" className="landing-page-illustrations py-5">
+    <section id="about" className="landing-page-illustrations">
       <div className="container px-3 px-md-3 px-lg-5">
-        <div className="illustration row d-flex align-items-md-center justify-content-mb-between mb-5 pb-md-5">
+        <div className="illustration row d-flex align-items-md-center justify-content-mb-between mb-5 mb-md-1 pb-md-1">
           <div className="illustration__text col-12 col-md-6 me-auto">
             <p className="h3 text-primary-local mb-3 fw-bold">
               Send and receive money across borders with Cobalt
@@ -26,7 +26,7 @@ export default function Illustrations() {
             />
           </div>
         </div>
-        <div className="illustration row d-flex align-items-md-center justify-content-mb-between mb-5 pb-md-5">
+        <div className="illustration row d-flex align-items-md-center justify-content-mb-between mb-1 pb-md-5">
           <div className="illustration__img col-12 col-md-5 me-auto mb-5">
             <Image
               className="img-fluid rounded float-end"
@@ -46,7 +46,7 @@ export default function Illustrations() {
             </p>
           </div>
         </div>
-        <div className="illustration row d-flex align-items-md-center justify-content-mb-between mb-5 pb-md-5">
+        <div className="illustration row d-flex align-items-md-center justify-content-mb-between mb-1 pb-md-5">
           <div className="illustration__text col-12 col-md-6 me-auto">
             <div className="d-flex flex-wrap align-items-center mb-3">
               <p className="h3 text-primary-local fw-bold">Join the Express Road</p>
@@ -71,3 +71,9 @@ export default function Illustrations() {
     </section>
   );
 }
+
+function checkName(name) {
+
+}
+
+console.log(checkName("123"))

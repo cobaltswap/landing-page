@@ -2,7 +2,7 @@ $md: 768px;
 
 :root {
   --white: #ffffff;
-  --primary-color: #0047ab;
+  --primary-color: #003989;
   --primary-color-light: #ccdaee;
 }
 html {
@@ -175,4 +175,18 @@ footer {
   &::placeholder {
     color: #eee;
   }
+}
+.sign-up {
+  background-image: url(/assets/Bg\ -\ Mobile\ Version.jpg);
+  @media (min-width: $md) {
+    background-image: url(/assets/Bg.jpg);
+  }
+}
+.hero {
+  height: 100%;
+  min-height: 700px;
+  background-image: url(/assets/landing-page-Blue\ bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
