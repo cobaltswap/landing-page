@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../public/Logo Explorations-blue_Logo in PNG copy 1.png";
+import config from "../config.json"
+
+console.log(config);
 
 function Footer() {
   return (

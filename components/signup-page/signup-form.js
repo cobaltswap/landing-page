@@ -50,7 +50,7 @@ function SignupForm({ setShouldDisplayDialog, setDialogText }) {
     try {
       const result = await fetch("/api/signup", options);
       const data = await result.json();
-      if (result.status === 400) throw new CustomError(data.message);
+      if (result.status !== 201) throw new CustomError(data.message);
       setShouldDisplayDialog(true);
       setDialogText(
         "We are almost there. A verification link has been sent to your email account. Please click on the link to verify your email address."

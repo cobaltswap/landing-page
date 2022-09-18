@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { PrimaryButton } from "../../components/ui/Button";
 
 export default function ConfirmEmail() {
@@ -8,6 +8,7 @@ export default function ConfirmEmail() {
   const [isLoading, setIsLoading] = useState(true);
   const { query } = useRouter();
   const { i: tokenID, t: token } = query;
+  const shouldRunEffect = useRef(false);
 
   const resultMap = useMemo(
     () => ({
@@ -37,8 +38,16 @@ export default function ConfirmEmail() {
       }
     }
 
-    checkVerificationLink();
-  }, [resultMap.failed, token, tokenID]);
+    shouldRunEffect.current && checkVerificationLink();
+
+    return () => {
+      if (!shouldRunEffect.current) {
+        shouldRunEffect.current = true;
+      }
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tokenID, token]);
 
   if (isLoading) return <EmailValidationLoading />;
 
@@ -69,7 +78,7 @@ function EmailValidationSuccessful() {
       <p className="mb-4">Your email address was successfully authenticated.</p>
       <div className="d-grid">
         <PrimaryButton>
-          <Link href={"https://wa.me/2347034834338"}>Chat with us on Whatsapp</Link>
+          <Link href={"https://wa.me/2349078785157"}>Chat with us on Whatsapp</Link>
         </PrimaryButton>
       </div>
     </EmailVerificationWrapper>

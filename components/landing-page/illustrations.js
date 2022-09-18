@@ -71,9 +71,3 @@ export default function Illustrations() {
     </section>
   );
 }
-
-function checkName(name) {
-
-}
-
-console.log(checkName("123"))

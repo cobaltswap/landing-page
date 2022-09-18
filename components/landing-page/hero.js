@@ -22,7 +22,7 @@ function Hero() {
           just as you want it.
         </div>
         <div className="hero__cta d-grid gap-2 col-12 col-md-4 col-lg-3 mx-auto my-2">
-          <Link href="#">
+          <Link href="/signup">
             <a className="col-md-12 btn btn-lg btn-secondary-local" role="button">
               Get Started
             </a>

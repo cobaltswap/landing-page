@@ -3,8 +3,7 @@ const nodemailer = require("nodemailer");
 const NOTIFICATION_ADDRESS = "Cobaltswap notification@cobaltswap.com";
 
 async function sendMail({ from = NOTIFICATION_ADDRESS, to, subject, body, isHTML = true }) {
-  // if (process.env.NODE_ENV !== "production") return true;
-
+  if (process.env.NODE_ENV !== "production") return true;
 
   const transporter = nodemailer.createTransport({
     host: process.env.NOTIFICATION_MAIL_HOST,
