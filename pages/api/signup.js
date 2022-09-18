@@ -29,7 +29,7 @@ export default async function signUp(req, res) {
       used: false,
     });
     const verificationLink = `https://landing-page-zeta-weld.vercel.app/confirm-email?i=${tokenID}&t=${token}`;
-    const verificationMail = "Hello! your verification email link is" + verificationLink;
+    const verificationMail = "Hello! your verification email link is " + verificationLink;
     await mailService.sendMail({
       to: customer.email,
       subject: "Please confirm your email",

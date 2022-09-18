@@ -51,13 +51,12 @@ function Dialog({ children, setShouldDisplayDialog }) {
       style={{ background: "rgba(0,0,0, 0.7)" }}
     >
       <div
-        className="d-flex flex-column position-absolute top-50 start-50 translate-middle"
+        className="d-flex flex-column position-absolute top-50 start-50 translate-middle col-10 col-sm-7 col-md-4"
         style={{
           backgroundColor: "#fff",
           color: "black",
           padding: "1.5rem",
           borderRadius: "10px",
-          maxWidth: "30%",
         }}
       >
         <div className="d-flex justify-content-end">
