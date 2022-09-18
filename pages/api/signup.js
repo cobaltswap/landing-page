@@ -47,7 +47,7 @@ export default async function signUp(req, res) {
       code = 500;
     if (error.name === "MongoServerError") {
       message = "Oops! Something went wrong";
-      if (error.message.startsWith("E11000 duplicate key error collection")) {
+      if (error.message?.startsWith("E11000 duplicate key error collection")) {
         message = "Email address already taken.";
         code = 400;
       }
