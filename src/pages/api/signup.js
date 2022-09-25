@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import { normalizeEmail } from "validator";
 import customerRepository from "../../backend/repository/customer-repository";
 import EmailVerificationTokenRepository from "../../backend/repository/email-verification-token-repository";
@@ -18,7 +20,6 @@ function makeCustomer({ lastName, email, ...rest }) {
 
   return customer;
 }
-
 export default async function signUp(req, res) {
   try {
     !req.body && res.status(400).json({ success: false, message: "Missing data", data: {} });
@@ -40,19 +41,25 @@ export default async function signUp(req, res) {
       tokenOwner: customer.id,
       used: false,
     });
-    const verificationLink = `https://landing-page-zeta-weld.vercel.app/confirm-email?i=${tokenID}&t=${token}`;
-    const verificationMail = "Hello! your verification email link is " + verificationLink;
-    await mailService.sendMail({
-      to: customer.email,
-      subject: "Please confirm your email",
-      body: verificationMail,
-    });
 
+    const verificationLink = `https://landing-page-zeta-weld.vercel.app/confirm-email?i=${tokenID}&t=${token}`;
+
+    const verificationMailTemplate = fs.readFileSync(
+      path.join(process.cwd() + "/src/backend/views/registration-email-template.html"),
+      { encoding: "utf-8" }
+    );
+    const mailBody = mailService.composeMail(verificationMailTemplate, { link: verificationLink });
     res.status(201).json({
       success: true,
       message: "User created successfully.",
       data: {},
     });
+    await mailService.sendMail({
+      to: customer.email,
+      subject: "Please confirm your email",
+      body: mailBody,
+    });
+
     return;
   } catch (error) {
     let message,

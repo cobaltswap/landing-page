@@ -1,4 +1,3 @@
-import { ObjectId } from "mongodb";
 import EmailVerificationToken from "../entities/email-verification-token";
 
 async function addToken(verificationToken) {
@@ -17,8 +16,10 @@ async function getTokenByID(tokenID) {
 }
 
 async function editToken(token) {
+  const _id = token.id;
+  delete token.id;
   try {
-    return await EmailVerificationToken.updateOne({ _id: ObjectId(token.id) }, { $set: token });
+    return await EmailVerificationToken.updateOne({ _id }, { $set: token });
   } catch (error) {
     throw error;
   }

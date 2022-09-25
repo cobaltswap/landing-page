@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { validateEmail, validateName } from "../../utils/validation/validate-user";
 
-import { SecondaryButton } from "../ui/Button.jsx";
+import { SecondaryButton } from "../../components/ui/Button.jsx";
 
 class CustomError {
   constructor(message) {
@@ -56,8 +56,17 @@ function SignupForm({ setShouldDisplayDialog, setDialogText }) {
         "We are almost there. A verification link has been sent to your email account. Please click on the link to verify your email address."
       );
     } catch (error) {
-      console.log(error);
-      setSubmitError(error.message);
+      if (error.message === "Failed to fetch") {
+        let message;
+        if (!navigator.onLine) {
+          message = "Looks like you are offline. Please check your network connection.";
+        } else {
+          message = "Please check your internet connection";
+        }
+        setSubmitError(message);
+      } else {
+        setSubmitError(error.message);
+      }
     } finally {
       setIsSubmitting(false);
     }

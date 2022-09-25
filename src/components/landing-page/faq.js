@@ -1,5 +1,5 @@
 import Image from "next/image";
-import rafiki from "../../public/assets/rafiki.png";
+import rafiki from "../../../public/assets/rafiki.png";
 
 const faqs = [
   {
@@ -22,20 +22,30 @@ const faqs = [
     question: "Does Cobalt have a mobile app?",
     answer: `No Cobalt does not have a mobile app yet. Nonetheless, Cobalt has solutions to your FX problems.`,
   },
+  {
+    id: "four",
+    question: "Does Cobalt have a mobile app?",
+    answer: `No Cobalt does not have a mobile app yet. Nonetheless, Cobalt has solutions to your FX problems.`,
+  },
+  {
+    id: "four",
+    question: "Does Cobalt have a mobile app?",
+    answer: `No Cobalt does not have a mobile app yet. Nonetheless, Cobalt has solutions to your FX problems.`,
+  },
 ];
 
 function FAQ() {
   return (
     <section id="faq" className="landing-page-faq mb-5 py-5">
-      <div className="container">
-        <div className="d-flex">
-          <div className="faqs col-12 col-md-7">
-            <h2 className="mb-3 mb-md-4 fw-bold text-primary-local">Your questions, answered</h2>
+      <div className="container px-5 py-2">
+        <div className="row align-items-md-center">
+          <div className="faqs col-12 col-sm-6">
+            <h2 className="mb-3 mb-md-4 fw-bold h4">Your questions, answered</h2>
             <div className="accordion accordion-flush" id="faqAccordion">
               {faqs.length &&
                 faqs.map((faq, key) => (
                   <div className="accordion-item" key={key}>
-                    <h2 className="accordion-header" id={`faq-header-${faq?.id}`}>
+                    <p className="accordion-header" id={`faq-header-${faq?.id}`}>
                       <button
                         className="accordion-button collapsed"
                         type="button"
@@ -46,7 +56,7 @@ function FAQ() {
                       >
                         {faq?.question}
                       </button>
-                    </h2>
+                    </p>
                     <div
                       id={faq?.id}
                       className="accordion-collapse collapse"
@@ -59,7 +69,7 @@ function FAQ() {
                 ))}
             </div>
           </div>
-          <div className="faq-illustration">
+          <div className="faq-illustration col-12 col-sm-6 d-none d-sm-block">
             <Image src={rafiki} alt="rafiki" className="img-fluid" />
           </div>
         </div>

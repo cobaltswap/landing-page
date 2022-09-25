@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 const NOTIFICATION_ADDRESS = "Cobaltswap notification@cobaltswap.com";
 
-async function sendMail({ from = NOTIFICATION_ADDRESS, to, subject, body, isHTML = true }) {
+async function sendMail({ from = NOTIFICATION_ADDRESS, to, subject, body, isHTML = true } = {}) {
   if (process.env.NODE_ENV !== "production") return true;
 
   const transporter = nodemailer.createTransport({
@@ -37,6 +37,16 @@ async function sendMail({ from = NOTIFICATION_ADDRESS, to, subject, body, isHTML
   }
 }
 
-const mailService = Object.freeze({ sendMail });
+function composeMail(template, params = {}) {
+  const ejs = require("ejs");
+
+  try {
+    return ejs.render(template, params);
+  } catch (error) {
+    throw error;
+  }
+}
+
+const mailService = Object.freeze({ sendMail, composeMail });
 
 export default mailService;

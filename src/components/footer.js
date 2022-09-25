@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../public/Logo Explorations-blue_Logo in PNG copy 1.png";
-import config from "../config.json"
-
-console.log(config);
+import logo from "../../public/assets/white_Logo.png";
+import config from "../config.json";
 
 function Footer() {
   return (
@@ -19,10 +17,10 @@ function Footer() {
           </div>
           <div className="d-md-flex justify-content-md-evenly mx-md-1 mx-lg-2 col-md-6 col-lg-7">
             <section className="mb-4 mx-md-2">
-              <h5 className="mb-3">Products</h5>
+              <h5 className="mb-3 fw-600">Products</h5>
               <ul className="list-unstyled">
                 <li>
-                  <Link href="#">
+                  <Link href="/">
                     <a>CobaltSwap</a>
                   </Link>
                 </li>
@@ -67,12 +65,12 @@ function Footer() {
           <address className="mb-4 text-md-end">
             {/* Social media */}
             <div className="footer__social-media mb-2">
-              <Link href="#">
+              <Link href={config.contact.instagramHandle}>
                 <a className="pe-2" target="_blank" rel="noopener noreferrer">
                   <i className="bi bi-instagram"></i>
                 </a>
               </Link>
-              <Link href="#">
+              <Link href={config.contact.twitterHandle}>
                 <a className="pe-2" target="_blank" rel="noopener noreferrer">
                   <i className="bi bi-twitter"></i>
                 </a>
@@ -80,14 +78,14 @@ function Footer() {
             </div>
             {/* email */}
             <div className="footer__email mb-2">
-              <Link href="mailto:contact@cobaltswap.com">
-                <a>contact@cobaltswap.com</a>
+              <Link href={`mailto:${config.contact.email}`}>
+                <a>{config.contact.email}</a>
               </Link>
             </div>
             {/* phone */}
             <div className="footer__phone mb-2">
-              <Link href="tel:+234703365997">
-                <a>+234 070 336 5997</a>
+              <Link href={`tel:+${config.contact.mobilePhone}`}>
+                <a>+{config.contact.mobilePhone}</a>
               </Link>
             </div>
           </address>

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../public/Logo Explorations-blue_Logo in PNG copy 1.png";
+import logo from "../../public/assets/blue_Logo.png";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-expand-md bg-primary-local">
+    <nav className="navbar navbar-expand-lg navbar-expand-md">
       <div className="container my-4 px-md-3 px-lg-5">
-        <Link href="#">
-          <a className="navbar-brand col-4">
+        <Link href="/">
+          <a className="navbar-brand">
             <Image src={logo} alt="" />
           </a>
         </Link>
@@ -38,7 +38,7 @@ function Navbar() {
             <div className="d-grid py-3 py-md-0 mb-4 mb-md-0">
               <Link href="/signup">
                 <a className="btn mx-3 mx-md-0 cta" role="button">
-                  Sign Up
+                  Get Started
                 </a>
               </Link>
             </div>

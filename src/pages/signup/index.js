@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SignupForm from "../../components/signup-page/signup-form";
+import SignupForm from "./signup-form";
 import { PrimaryButton } from "../../components/ui/Button";
 
 export default function Signup() {
