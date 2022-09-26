@@ -75,6 +75,16 @@ function Footer() {
                   <i className="bi bi-twitter"></i>
                 </a>
               </Link>
+              <Link href={config.contact.linkedinHandle}>
+                <a className="pe-2" target="_blank" rel="noopener noreferrer">
+                  <i className="bi bi-linkedin"></i>
+                </a>
+              </Link>
+              <Link href={config.contact.facebookHandle}>
+                <a className="pe-2" target="_blank" rel="noopener noreferrer">
+                  <i className="bi bi-facebook"></i>
+                </a>
+              </Link>
             </div>
             {/* email */}
             <div className="footer__email mb-2">
