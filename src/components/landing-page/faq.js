@@ -23,12 +23,12 @@ const faqs = [
     answer: `No Cobalt does not have a mobile app yet. Nonetheless, Cobalt has solutions to your FX problems.`,
   },
   {
-    id: "four",
+    id: "five",
     question: "Does Cobalt have a mobile app?",
     answer: `No Cobalt does not have a mobile app yet. Nonetheless, Cobalt has solutions to your FX problems.`,
   },
   {
-    id: "four",
+    id: "six",
     question: "Does Cobalt have a mobile app?",
     answer: `No Cobalt does not have a mobile app yet. Nonetheless, Cobalt has solutions to your FX problems.`,
   },
@@ -37,9 +37,9 @@ const faqs = [
 function FAQ() {
   return (
     <section id="faq" className="landing-page-faq mb-5 py-5">
-      <div className="container px-5 py-2">
+      <div className="container px-4 px-md-5 py-2">
         <div className="row align-items-md-center">
-          <div className="faqs col-12 col-sm-6">
+          <div className="faqs col-12 col-md-6">
             <h2 className="mb-3 mb-md-4 fw-bold h4">Your questions, answered</h2>
             <div className="accordion accordion-flush" id="faqAccordion">
               {faqs.length &&
@@ -69,7 +69,7 @@ function FAQ() {
                 ))}
             </div>
           </div>
-          <div className="faq-illustration col-12 col-sm-6 d-none d-sm-block">
+          <div className="faq-illustration col-12 col-md-6 d-none d-sm-block">
             <Image src={rafiki} alt="rafiki" className="img-fluid" />
           </div>
         </div>

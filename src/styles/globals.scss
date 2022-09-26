@@ -173,6 +173,10 @@ footer {
   }
   &-button {
     font-weight: 500;
+    padding: 1rem 0.2rem;
+    &:focus {
+      border-color: transparent;
+    }
   }
   &-button:not(.collapsed) {
     background-color: transparent;
@@ -220,13 +224,13 @@ footer {
     right: -5%;
     top: 70%;
     @media (min-width: $md) {
-      left: unset;
       right: 10%;
       top: 90%;
       width: 185%;
     }
     @media (min-width: $lg) {
       top: 83%;
+      right: 30%;
       width: 150%;
     }
 

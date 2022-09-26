@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SignupForm from "./signup-form";
 import { PrimaryButton } from "../../components/ui/Button";
+import SignupForm from "./signup-form";
 
 export default function Signup() {
   const [shouldDisplayDialog, setShouldDisplayDialog] = useState(false);
@@ -51,7 +51,7 @@ function Dialog({ children, setShouldDisplayDialog }) {
       style={{ background: "rgba(0,0,0, 0.7)" }}
     >
       <div
-        className="d-flex flex-column position-absolute top-50 start-50 translate-middle col-10 col-sm-7 col-md-4"
+        className="d-flex flex-column position-absolute top-50 start-50 translate-middle col-10 col-md-7 col-md-4"
         style={{
           backgroundColor: "#fff",
           color: "black",

@@ -54,7 +54,7 @@ function Hero() {
             <div className="rates container rounded-3 py-3 py-md-2 py-lg-3 py-xxl-4 position-absolute">
               <header className="text-center mb-3 mb-lg-4 fw-bold">Daily FX rates</header>
               <div className="row gap-2 align-items-center justify-content-center">
-                <div className="buy d-flex align-items-center flex-1 mx-auto col-11 col-sm-5 p-0">
+                <div className="buy d-flex align-items-center flex-1 mx-auto col-11 col-md-5 p-0">
                   <small className="fw-mid flex-fill">We buy</small>
                   <div className="d-flex align-self-end align-items-center px-3 py-2 border border-1 bg-white rounded rounded-3">
                     <div className="input-group">
@@ -82,7 +82,7 @@ function Hero() {
                     </span>
                   </div>
                 </div>
-                <div className="sell d-flex align-items-center mx-auto col-11 col-sm-5 p-0">
+                <div className="sell d-flex align-items-center mx-auto col-11 col-md-5 p-0">
                   <small className="fw-mid flex-fill">We Sell</small>
                   <div className="d-flex align-items-center px-3 py-2 border border-1 bg-white rounded rounded-3">
                     <div className="input-group">

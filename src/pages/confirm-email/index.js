@@ -112,7 +112,7 @@ function EmailValidationTokenExpired() {
 function EmailVerificationWrapper({ children }) {
   return (
     <div className="fullscreen d-flex align-items-center justify-content-center bg-primary-local">
-      <div className="col-10 col-sm-8 col-md-4 p-4 bg-white text-dark text-center rounded-3">
+      <div className="col-10 col-md-8 col-md-4 p-4 bg-white text-dark text-center rounded-3">
         {children}
       </div>
     </div>
