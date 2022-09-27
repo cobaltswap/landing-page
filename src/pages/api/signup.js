@@ -49,15 +49,23 @@ export default async function signUp(req, res) {
       { encoding: "utf-8" }
     );
     const mailBody = mailService.composeMail(verificationMailTemplate, { link: verificationLink });
+
+    const mailWasSent = await mailService.sendMail({
+      to: customer.email,
+      subject: "Please confirm your email",
+      body: mailBody,
+    });
+
+    if (!mailWasSent) {
+      await customerRepository.removeCustomer(cleanInput(customer).email);
+      console.log("Mail service failed. User was deleted");
+      throw ApiError.serverError("Oops! Something went wrong. Please try again.");
+    }
+
     res.status(201).json({
       success: true,
       message: "User created successfully.",
       data: {},
-    });
-    await mailService.sendMail({
-      to: customer.email,
-      subject: "Please confirm your email",
-      body: mailBody,
     });
 
     return;

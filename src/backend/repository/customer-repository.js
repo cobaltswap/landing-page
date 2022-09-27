@@ -8,6 +8,7 @@ async function addCustomer(customer) {
     throw error;
   }
 }
+
 async function findByEmail(email) {
   try {
     return await Customer.findOne({ email });
@@ -23,6 +24,22 @@ async function editCustomer(customer) {
   }
 }
 
-const customerRepository = Object.freeze({ addCustomer, findByEmail, editCustomer });
+async function removeCustomer(email) {
+  try {
+    const result = await Customer.deleteOne({ email });
+    console.log(result);
+
+    return;
+  } catch (error) {
+    throw error;
+  }
+}
+
+const customerRepository = Object.freeze({
+  addCustomer,
+  findByEmail,
+  editCustomer,
+  removeCustomer,
+});
 
 export default customerRepository;

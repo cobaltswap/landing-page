@@ -8,6 +8,9 @@ class ApiError {
   static badRequest(msg) {
     return new ApiError(msg, "400");
   }
+  static serverError(msg) {
+    return new ApiError(msg, "500");
+  }
 }
 
 export default ApiError;
