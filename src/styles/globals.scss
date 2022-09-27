@@ -48,7 +48,6 @@ a {
 }
 
 .navbar-links-container {
-  background-color: var(--white);
   .cta {
     background-color: var(--primary-color);
     color: var(--white);
@@ -62,6 +61,16 @@ a {
 }
 
 .nav {
+  &bar {
+    position: fixed;
+    width: 100%;
+  }
+  &bar-collapse {
+    background-color: var(--white);
+    @media (min-width: $md) {
+      background-color: unset;
+    }
+  }
   &bar-toggler {
     padding: unset;
     line-height: unset;
@@ -103,6 +112,47 @@ a {
     font-size: 0.8rem;
     @media screen and (min-width: $md) {
       color: var(--gray-color);
+    }
+  }
+}
+.hero {
+  padding-top: 100px;
+  background-color: var(--white);
+  background-image: url(/assets/hero_bg.png);
+  background-position: center center;
+  background-size: center;
+  background-repeat: no-repeat;
+  @media (min-width: $md) {
+    min-height: 550px;
+    padding-top: 110px;
+  }
+  @media (min-width: $lg) {
+    min-height: 770px;
+  }
+  @media (min-width: $xxl) {
+    min-height: 800px;
+  }
+
+  .rates {
+    background-color: #f2fffa;
+    border-radius: 16px;
+    width: 110%;
+    right: -5%;
+    top: 70%;
+    @media (min-width: $md) {
+      right: 10%;
+      top: 90%;
+      width: 185%;
+    }
+    @media (min-width: $lg) {
+      top: 83%;
+      right: 30%;
+      width: 150%;
+    }
+
+    @media (min-width: $xxl) {
+      top: 83%;
+      width: 140%;
     }
   }
 }
@@ -200,44 +250,6 @@ footer {
   background-image: url(/assets/Bg\ -\ Mobile\ Version.jpg);
   @media (min-width: $md) {
     background-image: url(/assets/Bg.jpg);
-  }
-}
-.hero {
-  background-color: var(--accent-color);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  @media (min-width: $md) {
-    min-height: 550px;
-  }
-  @media (min-width: $lg) {
-    min-height: 660px;
-  }
-  @media (min-width: $xxl) {
-    min-height: 800px;
-
-  }
-  .rates {
-    background-color: #f2fffa;
-    border-radius: 16px;
-    width: 110%;
-    right: -5%;
-    top: 70%;
-    @media (min-width: $md) {
-      right: 10%;
-      top: 90%;
-      width: 185%;
-    }
-    @media (min-width: $lg) {
-      top: 83%;
-      right: 30%;
-      width: 150%;
-    }
-
-    @media (min-width: $xxl) {
-      top: 83%;
-      width: 140%;
-    }
   }
 }
 

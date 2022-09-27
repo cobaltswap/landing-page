@@ -1,10 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 import logo from "../../public/assets/blue_Logo.png";
 
 function Navbar() {
+  useEffect(() => {
+    document.addEventListener("scroll", addWhiteBgToNav);
+  }, []);
+
+  function addWhiteBgToNav() {
+    if (window.pageYOffset >= 100) {
+      document.querySelector("#nav-bar").classList.add("bg-white");
+    } else {
+      document.querySelector("#nav-bar").classList.remove("bg-white");
+    }
+  }
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-expand-md">
+    <nav
+      id="nav-bar"
+      className="navbar navbar-expand-lg navbar-expand-md"
+      style={{ zIndex: "100" }}
+    >
       <div className="container my-4 px-md-3 px-lg-5">
         <Link href="/">
           <a className="navbar-brand">
@@ -26,10 +43,13 @@ function Navbar() {
           </div>
         </button>
         <div
-          className="collapse navbar-collapse mt-5 mt-md-0 justify-content-md-end"
+          className="collapse navbar-collapse justify-content-md-end"
           id="navbarSupportedContent"
         >
-          <div className="navbar-links-container d-md-flex py-4 py-md-0">
+          <div
+            id="navbar-links-container"
+            className="navbar-links-container d-md-flex py-4 py-md-0"
+          >
             <ul className="navbar-nav ms-auto mb-lg-0 px-3">
               <NavbarNavLink to="/#about" icon="bi-info-circle" name="About" />
               <NavbarNavLink to="#" icon="bi-gear" name="How it Works" />
