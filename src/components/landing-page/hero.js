@@ -54,7 +54,7 @@ function Hero() {
                   <div className="d-flex col-9 align-self-end align-items-center px-3 py-2 border border-1 bg-white rounded rounded-3">
                     <div className="input-group">
                       <button
-                        className="btn bg-primary-local dropdown-toggle me-3"
+                        className="btn btn-primary-local dropdown-toggle me-3"
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
@@ -82,7 +82,7 @@ function Hero() {
                   <div className="d-flex col-9 align-items-center px-3 py-2 border border-1 bg-white rounded rounded-3">
                     <div className="input-group">
                       <button
-                        className="btn bg-primary-local dropdown-toggle me-3"
+                        className="btn btn-primary-local dropdown-toggle me-3"
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
