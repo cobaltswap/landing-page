@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PrimaryButton } from "../../components/ui/Button";
+import config from "../../config.json";
 
 export default function ConfirmEmail() {
   const [validationResult, setValidationResult] = useState(undefined);
@@ -77,9 +78,11 @@ function EmailValidationSuccessful() {
       </div>
       <p className="mb-4">Your email address was successfully authenticated.</p>
       <div className="d-grid">
-        <PrimaryButton>
-          <Link href={"https://wa.me/2349078785157"}>Chat with us on Whatsapp</Link>
-        </PrimaryButton>
+        <Link href={`https://wa.me/${config.contact.whatsapp}`}>
+          <a className="col-12 btn btn-lg btn-primary-local" role="button">
+            Chat with us on Whatsapp
+          </a>
+        </Link>
       </div>
     </EmailVerificationWrapper>
   );
