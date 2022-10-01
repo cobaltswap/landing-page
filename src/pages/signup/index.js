@@ -30,8 +30,8 @@ export default function Signup() {
             <p></p>
           </section>
           <section className="col-12 col-md-6 ps-md-5 py-2 py-md-5">
-            <h1 className="h3 fw-bold mb-4 mb-md-5 text-center text-md-start">
-              To join the Cobalt family today, start your journey here;
+            <h1 className="h3 fw-600 mb-4 mb-md-5 text-center text-md-start">
+              Start your journey here:
             </h1>
             <SignupForm
               setShouldDisplayDialog={setShouldDisplayDialog}

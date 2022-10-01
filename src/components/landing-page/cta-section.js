@@ -2,13 +2,13 @@ import Link from "next/link";
 
 function CTA_section() {
   return (
-    <section className="bg-accent py-5">
-      <div className="container py-3 px-3 px-md-5 text-center">
-        <div className="row">
-          <h2 className=" col-12 col-md-10 col-lg-6 mx-auto fw-bold mb-4 mb-md-3">
+    <section className="bg-accent">
+      <div className="container py-5 px-4 px-md-5 text-center">
+        <div className="row py-md-5 my-1">
+          <header className="fw-700 h1 col-11 col-md-10 col-lg-6 mx-auto mb-4 font-heading">
             Send and receive money within and outside Africa
-          </h2>
-          <p className="col-md-10 col-lg-7 mx-auto mb-3">
+          </header>
+          <p className="fs-4 col-md-10 col-lg-8 mx-auto mb-5">
             Receive payments from anywhere in the world, and convert them to your desired currency.
             You&apos;ll always get the real exchange rate, and the low fees we&apos;re known for.
           </p>

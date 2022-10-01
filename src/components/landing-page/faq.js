@@ -39,15 +39,15 @@ function FAQ() {
     <section id="faq" className="landing-page-faq mb-5 py-5">
       <div className="container px-4 px-md-5 py-2">
         <div className="row align-items-md-center">
-          <div className="faqs col-12 col-md-6">
-            <h2 className="mb-3 mb-md-4 fw-bold h4">Your questions, answered</h2>
-            <div className="accordion accordion-flush" id="faqAccordion">
+          <div className="faqs col-12 col-md-7 col-lg-6">
+            <header className="mb-3 mb-md-5 fw-700 h1">Your questions, answered</header>
+            <div className="accordion accordion-flush fs-4" id="faqAccordion">
               {faqs.length &&
                 faqs.map((faq, key) => (
                   <div className="accordion-item" key={key}>
                     <p className="accordion-header" id={`faq-header-${faq?.id}`}>
                       <button
-                        className="accordion-button collapsed"
+                        className="accordion-button collapsed fs-4"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target={`#${faq?.id}`}
@@ -69,7 +69,7 @@ function FAQ() {
                 ))}
             </div>
           </div>
-          <div className="faq-illustration col-12 col-md-6 d-none d-sm-block">
+          <div className="faq-illustration col-12 col-md-5 col-lg-6 d-none d-sm-block">
             <Image src={rafiki} alt="rafiki" className="img-fluid" />
           </div>
         </div>

@@ -2,7 +2,7 @@ export function Button({ children, disabled, className, ...rest }) {
   const disabledClassNames = "disabled";
   return (
     <button
-      className={`btn py-3 ${className ? className : ""} ${disabled ? disabledClassNames : ""}`}
+      className={`btn py-2 ${className ? className : ""} ${disabled ? disabledClassNames : ""}`}
       {...rest}
     >
       {disabled ? "Please wait..." : children}

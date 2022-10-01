@@ -75,7 +75,8 @@ function SignupForm({ setShouldDisplayDialog, setDialogText }) {
   return (
     <form className="signup-form" onSubmit={handleSignup}>
       {submitError && (
-        <div className="text-center alert alert-danger mb-4" role="alert">
+        <div className="d-flex justify-content-center text-center alert alert-danger-local mb-4" role="alert">
+          <i className="bi bi-exclamation-triangle-fill me-2"></i>
           {submitError}
         </div>
       )}
@@ -106,7 +107,7 @@ function SignupForm({ setShouldDisplayDialog, setDialogText }) {
         required
         errors={formErrors.email && touched.email ? formErrors.email : ""}
       />
-      <small className="d-block mb-3">
+      <small className="d-block mb-3 fw-300">
         By clicking Agree & Sign up, you agree to the CobaltSwap Terms, conditions, Privacy Policy,
         and Cookie Policy.
       </small>
@@ -124,8 +125,16 @@ function TextInput({ label, name, errors, ...rest }) {
         {label}
       </label>
       <input type="text" className="form-control p-2 p-md-3" id={name} name={name} {...rest} />
-      <div className="pt-1">
-        <small className="text-danger">{errors}</small>
+      <div className="pt-2">
+        <small className="text-accent-local fw-500">
+          {errors ? (
+            <>
+              <i className="bi bi-exclamation-circle-fill pe-1"></i> {errors}
+            </>
+          ) : (
+            ""
+          )}
+        </small>
       </div>
     </div>
   );

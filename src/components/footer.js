@@ -5,19 +5,19 @@ import config from "../config.json";
 
 function Footer() {
   return (
-    <footer className="bg-primary-local py-5 py-md-5">
+    <footer className="bg-dark text-white py-5 fw-300">
       <div className="container px-3 px-lg-5 py-md-5">
         <div className="d-md-flex justify-content-md-between">
-          <div className="mb-4">
+          <div className="col-4 col-md-2 mb-3">
             <Link href="#">
-              <a className="col-4">
-                <Image src={logo} alt="" />
+              <a>
+                <Image src={logo} alt="Cobaltswap logo" layout="responsive" />
               </a>
             </Link>
           </div>
-          <div className="d-md-flex justify-content-md-evenly mx-md-1 mx-lg-2 col-md-6 col-lg-7">
+          <div className="d-md-flex justify-content-md-between mx-md-1 mx-lg-2 col-md-6 col-lg-6 fs-5">
             <section className="mb-4 mx-md-2">
-              <h5 className="mb-3 fw-600">Products</h5>
+              <h5 className="mb-2 fw-500">Products</h5>
               <ul className="list-unstyled">
                 <li>
                   <Link href="/">
@@ -27,7 +27,7 @@ function Footer() {
               </ul>
             </section>
             <section className="mb-4 mx-md-2">
-              <h5 className="mb-3">Company</h5>
+              <h5 className="mb-2">Company</h5>
               <ul className="list-unstyled">
                 <li>
                   <Link href="#about">
@@ -39,10 +39,15 @@ function Footer() {
                     <a>How it Works</a>
                   </Link>
                 </li>
+                <li>
+                  <Link href="#">
+                    <a>Reviews</a>
+                  </Link>
+                </li>
               </ul>
             </section>
             <section className="mb-4 mx-md-2">
-              <h5 className="mb-3">Legal</h5>
+              <h5 className="mb-2">Legal</h5>
               <ul className="list-unstyled">
                 <li>
                   <Link href="#">
@@ -100,7 +105,7 @@ function Footer() {
             </div>
           </address>
         </div>
-        <div className="copyright text-center">
+        <div className="copyright text-center mt-5 pt-5">
           <small>&copy; All Right Reserved, Cobalt {new Date().getFullYear()}</small>
         </div>
       </div>
