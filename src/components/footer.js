@@ -99,8 +99,12 @@ function Footer() {
             </div>
             {/* phone */}
             <div className="footer__phone mb-2">
-              <Link href={`tel:+${config.contact.mobilePhone}`}>
-                <a>+{config.contact.mobilePhone}</a>
+              <Link href={`tel:+${config.contact.mobilePhone1}`}>
+                <a>+{config.contact.mobilePhone1}</a>
+              </Link>
+              ,{" "}
+              <Link href={`tel:+${config.contact.mobilePhone2}`}>
+                <a>+{config.contact.mobilePhone2}</a>
               </Link>
             </div>
           </address>

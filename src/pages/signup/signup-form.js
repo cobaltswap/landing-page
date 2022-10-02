@@ -124,7 +124,7 @@ function TextInput({ label, name, errors, ...rest }) {
       <label htmlFor={name} className="form-label">
         {label}
       </label>
-      <input type="text" className="form-control p-2 p-md-3" id={name} name={name} {...rest} />
+      <input type="text" className="form-control p-3" id={name} name={name} {...rest} />
       <div className="pt-2">
         <small className="text-accent-local fw-500">
           {errors ? (

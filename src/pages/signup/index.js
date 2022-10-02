@@ -11,10 +11,10 @@ export default function Signup() {
       {shouldDisplayDialog ? (
         <Dialog setShouldDisplayDialog={setShouldDisplayDialog}>{dialogText}</Dialog>
       ) : null}
-      <div className="container px-3 px-md-4 px-lg-5">
+      <div className="container px-3 px-md-4 px-lg-5 mb-5 mb-md-0">
         <div className="row py-4">
-          <section className="col-12 col-md-6 pe-md-5 py-5">
-            <h2 className="h3 fw-bold mb-4 mb-md-5 text-center text-md-start">
+          <section className="col-12 col-md-6 pe-md-5 py-5 px-4 px-md-0">
+            <h2 className="h3 fw-500 mb-4 mb-md-5 text-center text-md-start">
               Terms and Conditions
             </h2>
             <p>
@@ -29,8 +29,8 @@ export default function Signup() {
             </p>
             <p></p>
           </section>
-          <section className="col-12 col-md-6 ps-md-5 py-2 py-md-5">
-            <h1 className="h3 fw-600 mb-4 mb-md-5 text-center text-md-start">
+          <section className="col-12 col-md-6 ps-md-5 py-2 py-md-5 px-4 px-md-0">
+            <h1 className="h3 fw-500 mb-4 mb-md-5 text-center text-md-start">
               Start your journey here:
             </h1>
             <SignupForm
