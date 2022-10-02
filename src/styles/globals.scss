@@ -52,7 +52,7 @@ a {
     width: 100%;
     z-index: 100;
     & .show {
-      height: 100vh;
+      height: 85vh;
       margin-left: -1.5rem;
       margin-right: -1.5rem;
       padding-left: 1rem;
@@ -265,9 +265,6 @@ footer {
     background-color: transparent;
     color: inherit;
   }
-}
-.signup-form {
-  font-size: 0.8rem;
 }
 
 .form-control {

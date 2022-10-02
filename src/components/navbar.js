@@ -49,7 +49,7 @@ function Navbar() {
             id="navbar-links-container"
             className="navbar-links-container d-md-flex py-4 py-md-0"
           >
-            <ul className="navbar-nav ms-md-auto mb-lg-0 px-3">
+            <ul className="navbar-nav d-md-flex align-items-md-center ms-md-auto mb-lg-0 px-3">
               <NavbarNavLink to="/#about" icon="bi-info-circle" name="About" />
               <NavbarNavLink to="#" icon="bi-gear" name="How it Works" />
               <NavbarNavLink to="/#faq" icon="bi-question-square" name="FAQs" />
