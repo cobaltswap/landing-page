@@ -6,7 +6,7 @@ import config from "../config.json";
 function Footer() {
   return (
     <footer className="bg-dark text-white py-5 fw-300">
-      <div className="container px-3 px-lg-5 py-md-5">
+      <div className="container px-4 px-md-3 px-lg-4 py-md-5">
         <div className="d-md-flex justify-content-md-between">
           <div className="col-4 col-md-2 mb-3">
             <Link href="#">
@@ -15,9 +15,9 @@ function Footer() {
               </a>
             </Link>
           </div>
-          <div className="d-md-flex justify-content-md-between mx-md-1 mx-lg-2 col-md-6 col-lg-6 fs-5">
+          <div className="d-md-flex justify-content-md-between mx-md-1 mx-lg-2 col-md-6 col-lg-6 fs-6">
             <section className="mb-4 mx-md-2">
-              <h5 className="mb-2 fw-500">Products</h5>
+              <header className="h5 mb-2 mb-md-4">Products</header>
               <ul className="list-unstyled">
                 <li>
                   <Link href="/">
@@ -27,7 +27,7 @@ function Footer() {
               </ul>
             </section>
             <section className="mb-4 mx-md-2">
-              <h5 className="mb-2">Company</h5>
+              <header className="mb-2 mb-md-4 h5">Company</header>
               <ul className="list-unstyled">
                 <li>
                   <Link href="#about">
@@ -47,7 +47,7 @@ function Footer() {
               </ul>
             </section>
             <section className="mb-4 mx-md-2">
-              <h5 className="mb-2">Legal</h5>
+              <header className="h5 mb-2 mb-md-4">Legal</header>
               <ul className="list-unstyled">
                 <li>
                   <Link href="#">
