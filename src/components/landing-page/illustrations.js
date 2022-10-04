@@ -62,9 +62,9 @@ export default function Illustrations() {
       </div>
       <div className="illustration">
         <div className="container py-5 px-4 px-md-5">
-          <div className="row align-items-md-center py-4 py-mb-5 my-3">
-            <div className="illustration__text col-12 col-md-5 col-lg-5 me-auto">
-              <div className="col-12 col-md-12">
+          <div className="row align-items-md-center justify-content-between py-4 py-mb-5 my-3">
+            <div className="illustration__text col-12 col-md-5 col-lg-5 me-auto mb-5">
+              <div className="col-12">
                 <div className="d-flex flex-wrap align-items-center mb-3">
                   <header className="mb-4">
                     <span className="h1 fw-700 font-heading">Join the Express Road</span>
@@ -81,7 +81,7 @@ export default function Illustrations() {
                 </p>
               </div>
             </div>
-            <div className="illustration__img col-12 col-md-7 ms-auto mb-5">
+            <div className="illustration__img col-12 d-flex flex-row-reverse px-md-0 col-md-7 mb-5">
               <Image className="img-fluid float-end" src={illustration3} alt="Illustration 3" />
             </div>
           </div>

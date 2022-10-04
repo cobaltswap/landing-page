@@ -122,11 +122,12 @@ a {
 .hero {
   padding-top: 120px;
   background-color: var(--white);
-  background-image: url(/assets/hero_bg.png);
+  background-image: url(/assets/hero_bg_mobile.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   @media (min-width: $md) {
+    background-image: url(/assets/hero_bg.png);
     padding-top: 110px;
   }
   & .hero-illustration-section {
