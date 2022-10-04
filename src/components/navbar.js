@@ -6,22 +6,37 @@ import logo from "../../public/assets/blue_Logo.png";
 function Navbar() {
   useEffect(() => {
     document.addEventListener("scroll", addWhiteBgToNav);
+
     return () => {
       document.removeEventListener("scroll", addWhiteBgToNav);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  function DOMSelector(_selector) {
+    return document.querySelector(_selector);
+  }
+
   function addWhiteBgToNav() {
-    if (window.pageYOffset >= 100) {
-      document.querySelector("#nav-bar").classList.add("bg-white-translucent", "pt-2");
+    if (window.pageYOffset > 0) {
+      const dropdownIsActive = DOMSelector("#navbarSupportedContent").classList.contains("show");
+      DOMSelector("#nav-bar").classList.add("border-bottom");
+      if (dropdownIsActive) {
+        DOMSelector("#nav-bar").classList.add("bg-white");
+      } else {
+        DOMSelector("#nav-bar").classList.add("bg-white-translucent");
+      }
     } else {
-      document.querySelector("#nav-bar").classList.remove("bg-white-translucent", "pt-2");
+      DOMSelector("#nav-bar").classList.remove("bg-white-translucent");
+      DOMSelector("#nav-bar").classList.remove("bg-white");
+      DOMSelector("#nav-bar").classList.remove("border-bottom");
     }
   }
 
   return (
     <nav id="nav-bar" className="navbar navbar-expand-lg navbar-expand-md">
-      <div className="container py-1 py-md-4 px-4 px-md-3 px-lg-4">
+      <div className="container py-1 py-md-2 px-4 px-md-3 px-lg-4">
         <Link href="/">
           <a className="navbar-brand">
             <Image src={logo} alt="Cobaltswap logo" />
@@ -47,7 +62,7 @@ function Navbar() {
         >
           <div
             id="navbar-links-container"
-            className="navbar-links-container d-md-flex py-4 py-md-0"
+            className="navbar-links-container d-flex  d-md-flex py-4 py-md-0"
           >
             <ul className="navbar-nav d-md-flex align-items-md-center ms-md-auto mb-lg-0 px-3">
               <NavbarNavLink to="/#about" icon="bi-info-circle" name="About" />

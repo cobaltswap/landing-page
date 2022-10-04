@@ -13,12 +13,14 @@ export default function Home() {
       <Head>
         <title>CobaltSwap</title>
       </Head>
-      <Navbar />
-      <Hero />
-      <Illustrations />
-      <CTA_section />
-      <Security />
-      <FAQ />
+      <div className="position-relative">
+        <Navbar />
+        <Hero />
+        <Illustrations />
+        <CTA_section />
+        <Security />
+        <FAQ />
+      </div>
       <Footer />
     </>
   );

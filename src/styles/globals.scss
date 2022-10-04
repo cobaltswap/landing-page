@@ -32,7 +32,6 @@ body,
 }
 
 body {
-  position: relative;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -48,18 +47,20 @@ a {
 
 .nav {
   &bar {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 100;
+    min-height: 70px;
+
     & .show {
-      height: 85vh;
       margin-left: -1.5rem;
       margin-right: -1.5rem;
       padding-left: 1rem;
       padding-right: 1rem;
       .navbar-links-container {
         display: flex;
-        height: 100%;
+        min-height: calc(100vh - 70px);
         flex-direction: column;
         justify-content: space-between;
       }
@@ -120,6 +121,7 @@ a {
   }
 }
 .hero {
+  margin-top: -100px;
   padding-top: 120px;
   background-color: var(--white);
   background-image: url(/assets/hero_bg_mobile.jpg);
@@ -128,7 +130,7 @@ a {
   background-repeat: no-repeat;
   @media (min-width: $md) {
     background-image: url(/assets/hero_bg.png);
-    padding-top: 110px;
+    // padding-top: 110px;
   }
   & .hero-illustration-section {
     background-color: var(--white);
@@ -136,7 +138,7 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 500px;
+    min-height: 550px;
   }
 
   .rates {
@@ -211,10 +213,14 @@ footer {
     font-size: small;
   }
 }
+
 .bg {
   &-primary-local {
     background-color: var(--primary-color);
     color: var(--white);
+  }
+  &-primary-light {
+    background-color: var(--primary-color-light);
   }
   &-white-translucent {
     background-color: rgba(255, 255, 255, 0.9);
@@ -222,25 +228,26 @@ footer {
   &-dark {
     background-color: var(--background-dark) !important;
   }
+  &-accent {
+    background-color: var(--accent-color);
+  }
+  &-accent-2 {
+    background-color: var(--accent-color-2);
+  }
 }
-.text-primary-local {
-  color: var(--primary-color);
+
+.text {
+  &-primary-local {
+    color: var(--primary-color);
+  }
+  &-accent-local {
+    color: var(--accent-color);
+  }
 }
-.text-accent-local {
-  color: var(--accent-color);
-}
+
 .alert-danger-local {
   color: var(--black);
   background-color: var(--accent-color);
-}
-.bg-primary-light {
-  background-color: var(--primary-color-light);
-}
-.bg-accent {
-  background-color: var(--accent-color);
-}
-.bg-accent-2 {
-  background-color: var(--accent-color-2);
 }
 
 .accordion {

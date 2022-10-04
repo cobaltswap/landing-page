@@ -23,7 +23,7 @@ function Hero() {
                 Carry out your transactions with ease, just as you want it.
               </div>
               <div className="hero__cta my-2">
-                <div className="row px-md-3 gap-2">
+                <div className="d-flex flex-wrap gap-2">
                   <div className="col-9 col-md-4 col-lg-4 mx-auto mx-md-0 p-0">
                     <Link href="/signup">
                       <a className="col-12 btn btn-lg btn-primary-local" role="button">
