@@ -9,6 +9,8 @@ import cleanInput from "../../backend/utils/clean-input";
 import tokenUtil from "../../backend/utils/token-util";
 import validateUser from "../../utils/validation/validate-user";
 
+import logo from "../../../public/assets/blue_Logo.png";
+
 function makeCustomer({ lastName, email, ...rest }) {
   const customer = {
     lastName: lastName.toUpperCase(),
@@ -42,13 +44,16 @@ export default async function signUp(req, res) {
       used: false,
     });
 
-    const verificationLink = `https://landing-page-zeta-weld.vercel.app/confirm-email?i=${tokenID}&t=${token}`;
+    const verificationLink = `https://www.cobaltswap.com/confirm-email?i=${tokenID}&t=${token}`;
 
     const verificationMailTemplate = fs.readFileSync(
       path.join(process.cwd() + "/src/backend/views/registration-email-template.html"),
       { encoding: "utf-8" }
     );
-    const mailBody = mailService.composeMail(verificationMailTemplate, { link: verificationLink });
+    const mailBody = mailService.composeMail(verificationMailTemplate, {
+      link: verificationLink,
+      logo,
+    });
 
     const mailWasSent = await mailService.sendMail({
       to: customer.email,
