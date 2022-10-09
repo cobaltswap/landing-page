@@ -46,7 +46,7 @@ function ComingSoon() {
               <span className="me-4">coming soon...</span>
             </div>
           </div>
-          <p className="display-3 fw-600 lh-1 font-heading">
+          <p className="display-3 fw-600 font-heading">
             Our platform will be launching <span className="text-primary-local">SOON!</span>
           </p>
           <p className="text-secondary col-9 mb-4 mx-auto">
