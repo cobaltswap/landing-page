@@ -80,13 +80,6 @@ function Navbar() {
                 showIcon
               />
             </ul>
-            <div className="d-grid d-md-flex py-1 py-md-0 mb-4 mb-md-0">
-              <Link href="/signup">
-                <a className="btn btn-primary-local mx-3 mx-md-0" role="button">
-                  Get Started
-                </a>
-              </Link>
-            </div>
           </div>
         </div>
       </div>
