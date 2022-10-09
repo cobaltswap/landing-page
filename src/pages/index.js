@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
 import Navbar from "../components/navbar";
 
 export default function Home() {
@@ -17,11 +16,6 @@ export default function Home() {
 }
 
 function ComingSoon() {
-  const [emailAddress, setEmailAddress] = useState(undefined);
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(emailAddress);
-  }
   return (
     <div id="coming-soon" className="coming-soon d-flex align-items-center pt-5">
       <div className="container mt-3 mt-md-5">
@@ -52,25 +46,6 @@ function ComingSoon() {
           <p className="text-secondary col-9 mb-4 mx-auto">
             We are working hard to get things up and running
           </p>
-          <form onSubmit={handleSubmit}>
-            <div className="d-flex flex-wrap gap-2 justify-content-center col-10 col-lg-12 mx-auto mb-5 pb-5">
-              <div className="col-11 col-lg-4">
-                <input
-                  className="form-control"
-                  type="email"
-                  name="email"
-                  id="email"
-                  onChange={(e) => setEmailAddress(e.target.value)}
-                  placeholder="Enter your email address"
-                />
-              </div>
-              <div className="col-11 col-lg-2">
-                <button className="btn btn-primary-local py-2 col-12" type="submit">
-                  Notify me
-                </button>
-              </div>
-            </div>
-          </form>
         </div>
       </div>
     </div>
