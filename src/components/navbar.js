@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import logo from "../../public/assets/blue_Logo.png";
+import config from "../config.json";
 
 function Navbar() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function Navbar() {
   }
 
   function addWhiteBgToNav() {
+    console.log(window.scrollY);
     if (window.pageYOffset > 0) {
       const dropdownIsActive = DOMSelector("#navbarSupportedContent").classList.contains("show");
       DOMSelector("#nav-bar").classList.add("border-bottom");
@@ -35,7 +37,7 @@ function Navbar() {
   }
 
   return (
-    <nav id="nav-bar" className="navbar navbar-expand-lg navbar-expand-md">
+    <nav id="nav-bar" className="navbar navbar-expand-lg">
       <div className="container py-1 py-md-2 px-4 px-md-3 px-lg-4">
         <Link href="/">
           <a className="navbar-brand">
@@ -62,16 +64,25 @@ function Navbar() {
         >
           <div
             id="navbar-links-container"
-            className="navbar-links-container d-flex  d-md-flex py-4 py-md-0"
+            className="navbar-links-container d-flex d-md-flex align-items-md-center py-4 py-md-0"
           >
             <ul className="navbar-nav d-md-flex align-items-md-center ms-md-auto mb-lg-0 px-3">
-              <NavbarNavLink to="/#about" icon="bi-info-circle" name="About" />
-              <NavbarNavLink to="#" icon="bi-gear" name="How it Works" />
-              <NavbarNavLink to="/#faq" icon="bi-question-square" name="FAQs" />
+              <NavbarNavLink
+                to={`tel:${config.contact.mobilePhone1}`}
+                icon="bi-telephone-outbound-fill"
+                name={`${parsePhoneNumberForView(config.contact.mobilePhone1)}`}
+                showIcon
+              />
+              <NavbarNavLink
+                to={`mailto:${config.contact.email}`}
+                icon="bi-envelope-fill"
+                name={config.contact.email}
+                showIcon
+              />
             </ul>
-            <div className="d-grid py-3 py-md-0 mb-4 mb-md-0">
+            <div className="d-grid d-md-flex py-1 py-md-0 mb-4 mb-md-0">
               <Link href="/signup">
-                <a className="btn btn-primary-local mx-3 mx-md-0 cta" role="button">
+                <a className="btn btn-primary-local mx-3 mx-md-0" role="button">
                   Get Started
                 </a>
               </Link>
@@ -83,17 +94,27 @@ function Navbar() {
   );
 }
 
-function NavbarNavLink({ to = "", icon, name }) {
+function NavbarNavLink({ to = "", icon, name, showIcon }) {
   return (
-    <li className="nav-item mx-md-3 py-2 py-md-0">
+    <li className="nav-item mx-md-1 py-2 py-md-0">
       <Link href={to}>
         <a className="nav-link fs-6">
-          <span className={`bi ${icon ? icon : ""} pe-3 fw-bold d-md-none`}></span>
+          <span
+            className={`bi ${icon ? icon : ""} pe-2 fw-bold ${showIcon ? "" : "d-md-none"}`}
+          ></span>
           {name}
         </a>
       </Link>
     </li>
   );
+}
+
+function parsePhoneNumberForView(phoneNumber) {
+  const phoneNumberString = phoneNumber + "";
+  return `+${phoneNumberString.substring(0, 3)} ${phoneNumberString.substring(
+    3,
+    6
+  )} ${phoneNumberString.substring(6, 10)} ${phoneNumberString.substring(10, 20)}`;
 }
 
 export default Navbar;
