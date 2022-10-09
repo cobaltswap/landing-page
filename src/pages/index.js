@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>coming Soon | Cobaltswap</title>
+        <title>Coming Soon | Cobaltswap</title>
       </Head>
       <div className="position-relative fullscreen">
         <Navbar />
