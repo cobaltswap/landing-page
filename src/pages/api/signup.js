@@ -52,7 +52,7 @@ export default async function signUp(req, res) {
     );
     const mailBody = mailService.composeMail(verificationMailTemplate, {
       link: verificationLink,
-      logo: logo.src,
+      logo: "https://www.cobaltswap.com" + logo.src,
     });
 
     const mailWasSent = await mailService.sendMail({
@@ -80,7 +80,7 @@ export default async function signUp(req, res) {
       code = 500;
 
     if (error.name === "MongoServerError") {
-      if (error?.message?.startsWith("E11000 duplicate key error collection")) {
+      if (error.message && error.message.startsWith("E11000 duplicate key error collection")) {
         message = "Email address already taken.";
         code = 400;
       } else {
