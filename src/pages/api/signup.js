@@ -52,7 +52,7 @@ export default async function signUp(req, res) {
     );
     const mailBody = mailService.composeMail(verificationMailTemplate, {
       link: verificationLink,
-      logo,
+      logo: logo.src,
     });
 
     const mailWasSent = await mailService.sendMail({
