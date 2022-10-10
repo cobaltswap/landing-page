@@ -100,13 +100,10 @@ function Footer() {
             </div>
             {/* phone */}
             <div className="footer__phone mb-2">
-              <Link href={`tel:+${config.contact.mobilePhone1}`}>
-                <a>{parsePhoneNumberForView(config.contact.mobilePhone1)}</a>
+              <Link href={`tel:+${config.contact.mobilePhone}`}>
+                <a>{parsePhoneNumberForView(config.contact.mobilePhone)}</a>
               </Link>
-              ,{" "}
-              <Link href={`tel:+${config.contact.mobilePhone2}`}>
-                <a>{parsePhoneNumberForView(config.contact.mobilePhone2)}</a>
-              </Link>
+             
             </div>
           </address>
         </div>

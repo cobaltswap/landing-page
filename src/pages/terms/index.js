@@ -18,7 +18,9 @@ export default function TermsAndConditions() {
           <Terms />
           <Privacy />
           <TermsContact />
-          <p className="col-12 col-md-11 mx-auto text-secondary fw-600 h4 mb-5">Last Updated: May 10, 2020</p>
+          <p className="col-12 col-md-11 mx-auto text-secondary fw-600 h4 mb-5">
+            Last Updated: May 10, 2020
+          </p>
         </div>
       </div>
       <Footer />
@@ -134,8 +136,8 @@ function TermsContact() {
           </p>
           <p className="mb-1">
             <span className="h6">Telephone: </span>
-            <Link href={`tel:+${config.contact.mobilePhone1}`}>
-              <a>{parsePhoneNumberForView(config.contact.mobilePhone1)}</a>
+            <Link href={`tel:+${config.contact.mobilePhone}`}>
+              <a>{parsePhoneNumberForView(config.contact.mobilePhone)}</a>
             </Link>
           </p>
         </div>
