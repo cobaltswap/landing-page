@@ -9,8 +9,6 @@ import cleanInput from "../../backend/utils/clean-input";
 import tokenUtil from "../../backend/utils/token-util";
 import validateUser from "../../utils/validation/validate-user";
 
-import logo from "../../../public/assets/blue_Logo.png";
-
 function makeCustomer({ lastName, email, ...rest }) {
   const customer = {
     lastName: lastName.toUpperCase(),
@@ -52,7 +50,6 @@ export default async function signUp(req, res) {
     );
     const mailBody = mailService.composeMail(verificationMailTemplate, {
       link: verificationLink,
-      logo: encodeURIComponent("www.cobaltswap.com" + logo.src),
     });
 
     const mailWasSent = await mailService.sendMail({
