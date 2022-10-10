@@ -5,6 +5,15 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head lang="en">
+          <meta
+            content="Cobaltswap makes buying, selling and swapping FX seamless and affordable."
+            name="description"
+          />
+          <meta
+            content="Cobaltswap makes buying, selling and swapping FX seamless and affordable."
+            property="og:description"
+          />
+          <meta content="Buy, Sell and Swap FX - CobaltSwap" property="og:title" />
           {/* bootstrap */}
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"

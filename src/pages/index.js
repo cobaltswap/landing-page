@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>CobaltSwap</title>
+        <title>Buy, Sell and Swap FX - CobaltSwap</title>
       </Head>
       <div className="position-relative">
         <Navbar />
