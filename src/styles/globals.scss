@@ -12,6 +12,7 @@ $xxl: 1440px;
   --accent-color-2: #fef2f3;
   --gray-color: #555;
   --background-dark: #000e22;
+  --teal-green: #d3f4e8;
 }
 html {
   box-sizing: border-box;
@@ -146,9 +147,8 @@ a {
     margin-left: -3rem;
     margin-right: -3rem;
     .row {
-      background-color: #f2fffa;
+      background-color: var(--teal-green);
       @media (min-width: $md) {
-        background-color: #f2fffa;
         margin-top: -5rem;
       }
     }
@@ -233,6 +233,9 @@ footer {
   }
   &-accent-2 {
     background-color: var(--accent-color-2);
+  }
+  &-teal-green {
+    background-color: var(--teal-green);
   }
 }
 

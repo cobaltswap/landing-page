@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/assets/white_Logo.png";
 import config from "../config.json";
+import parsePhoneNumberForView from "../utils/parse-phone-number-for-view";
 
 function Footer() {
   return (
@@ -50,7 +51,7 @@ function Footer() {
               <header className="h5 mb-2 mb-md-4">Legal</header>
               <ul className="list-unstyled">
                 <li>
-                  <Link href="#">
+                  <Link href="/terms">
                     <a>Terms &amp; Conditions</a>
                   </Link>
                 </li>
@@ -100,11 +101,11 @@ function Footer() {
             {/* phone */}
             <div className="footer__phone mb-2">
               <Link href={`tel:+${config.contact.mobilePhone1}`}>
-                <a>+{config.contact.mobilePhone1}</a>
+                <a>{parsePhoneNumberForView(config.contact.mobilePhone1)}</a>
               </Link>
               ,{" "}
               <Link href={`tel:+${config.contact.mobilePhone2}`}>
-                <a>+{config.contact.mobilePhone2}</a>
+                <a>{parsePhoneNumberForView(config.contact.mobilePhone2)}</a>
               </Link>
             </div>
           </address>

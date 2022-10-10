@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { validateEmail, validateName } from "../../utils/validation/validate-user";
 
+import Link from "next/link";
 import { SecondaryButton } from "../../components/ui/Button.jsx";
 
 class CustomError {
@@ -111,8 +112,10 @@ function SignupForm({ setShouldDisplayDialog, setDialogText }) {
         errors={formErrors.email && touched.email ? formErrors.email : ""}
       />
       <small className="d-block mb-3 fw-300">
-        By clicking Agree & Sign up, you agree to the CobaltSwap Terms, conditions, and Privacy
-        Policy.
+        By clicking Agree & Sign up, you agree our{" "}
+        <Link href="/terms">
+          <a className="fst-italic">Terms, conditions, and Privacy Policy.</a>
+        </Link>
       </small>
       <div className="d-grid">
         <SecondaryButton disabled={isSubmitting}>Agree &amp; Sign Up</SecondaryButton>
