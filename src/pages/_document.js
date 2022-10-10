@@ -15,7 +15,8 @@ class MyDocument extends Document {
           />
           <meta content="Buy, Sell and Swap FX - CobaltSwap" property="og:title" />
           <meta content="https://www.cobaltswap.com/assets/social-media.png" property="og:image" />
-          <link rel="icon" type="image/x-icon" href="./favicon.ico"></link>
+          <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+
           {/* bootstrap */}
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
