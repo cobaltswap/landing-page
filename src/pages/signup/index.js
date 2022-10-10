@@ -1,4 +1,7 @@
+import Head from "next/head";
+import Image from "next/image";
 import { useState } from "react";
+import launchingIllustration from "../../../public/assets/Launching.png";
 import { PrimaryButton } from "../../components/ui/Button";
 import SignupForm from "./signup-form";
 
@@ -11,28 +14,26 @@ export default function Signup() {
       {shouldDisplayDialog ? (
         <Dialog setShouldDisplayDialog={setShouldDisplayDialog}>{dialogText}</Dialog>
       ) : null}
+      <Head>
+        <title>Sign Up - CobaltSwap</title>
+      </Head>
       <div className="container px-3 px-md-4 px-lg-5 mb-5 mb-md-0">
         <div className="row py-4">
           <section className="col-12 col-md-6 pe-md-5 py-5 px-4 px-md-0">
-            <h2 className="h3 fw-500 mb-4 mb-md-5 text-center text-md-start">
-              Terms and Conditions
-            </h2>
+            <div className="col-12 col-md-10 mb-4 mb-md-0">
+              <Image className="img-fluid" layout="responsive" src={launchingIllustration} alt="" />
+            </div>
+            <h1 className="h3 fw-500 mb-4 text-center text-md-start">Welcome to Cobalt</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae delectus, voluptate
               repudiandae eum iure dicta fugiat temporibus enim dolorum animi veniam molestiae
               aliquid dolore.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae delectus, voluptate
-              repudiandae eum iure dicta fugiat temporibus enim dolorum animi veniam molestiae
-              aliquid dolore.
-            </p>
+
             <p></p>
           </section>
           <section className="col-12 col-md-6 ps-md-5 py-2 py-md-5 px-4 px-md-0">
-            <h1 className="h3 fw-500 mb-4 mb-md-5 text-center text-md-start">
-              Start your journey here:
-            </h1>
+            <h1 className="h3 fw-500 mb-4 text-center text-md-start">Start your journey here:</h1>
             <SignupForm
               setShouldDisplayDialog={setShouldDisplayDialog}
               setDialogText={setDialogText}
