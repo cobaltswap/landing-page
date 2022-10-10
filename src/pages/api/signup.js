@@ -52,7 +52,7 @@ export default async function signUp(req, res) {
     );
     const mailBody = mailService.composeMail(verificationMailTemplate, {
       link: verificationLink,
-      logo: "https://www.cobaltswap.com" + logo.src,
+      logo: encodeURIComponent("https://www.cobaltswap.com" + logo.src),
     });
 
     const mailWasSent = await mailService.sendMail({
