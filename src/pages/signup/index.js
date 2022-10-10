@@ -47,7 +47,7 @@ export default function Signup() {
 function Dialog({ children, setShouldDisplayDialog }) {
   return (
     <div
-      className="position-absolute top-0 start-0 end-0 bottom-0"
+      className="position-fixed top-0 start-0 end-0 bottom-0"
       style={{ background: "rgba(0,0,0, 0.7)" }}
     >
       <div
