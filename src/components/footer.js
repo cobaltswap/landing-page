@@ -6,7 +6,10 @@ import parsePhoneNumberForView from "../utils/parse-phone-number-for-view";
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white py-5 fw-300">
+    <footer
+      className="bg-dark text-white py-5 fw-300"
+      style={{ position: "absolute", bottom: "0", right: "0", left: "0" }}
+    >
       <div className="container px-4 px-md-3 px-lg-4 py-md-5">
         <div className="d-md-flex justify-content-md-between">
           <div className="col-4 col-md-2 mb-3">
@@ -103,7 +106,6 @@ function Footer() {
               <Link href={`tel:+${config.contact.mobilePhone}`}>
                 <a>{parsePhoneNumberForView(config.contact.mobilePhone)}</a>
               </Link>
-             
             </div>
           </address>
         </div>

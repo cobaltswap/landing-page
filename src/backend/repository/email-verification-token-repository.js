@@ -25,6 +25,6 @@ async function editToken(token) {
   }
 }
 
-const EmailVerificationTokenRepository = Object.freeze({ addToken, getTokenByID, editToken });
+const emailVerificationTokenRepository = Object.freeze({ addToken, getTokenByID, editToken });
 
-export default EmailVerificationTokenRepository;
+export default emailVerificationTokenRepository;

@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
-const { v4: uuid_v4 } = require("uuid");
+const crypto = require("crypto");
 
 function generateEmailVerificationToken(customerID) {
-  const tokenID = uuid_v4();
+  const tokenID = crypto.randomUUID();
   const payload = {
     iss: process.env.JWT_ISSUER,
     sub: customerID,

@@ -1,15 +1,31 @@
-export default function validateRates(rates) {
-  let errors = [];
-  try {
-    if (!Array.isArray(rates)) errors.push("Provided rates is not allowed");
+const config = require("../../backend/config.json");
 
-    // errors = [
-    //   ...validateName(firstName, { type: "First name" }),
-    //   ...validateName(lastName, { type: "Last name" }),
-    //   ...validateEmail(email),
-    // ];
+export default function validateRates(rates) {
+  const errors = [];
+  if (!Array.isArray(rates)) {
+    errors.push("Provided rates is not allowed.");
     return errors;
-  } catch (error) {
-    throw error;
   }
+  const providedCurrencies = new Set(rates.map((_rate) => _rate.currency));
+
+  if (providedCurrencies.size !== config.currencies.length) {
+    errors.push("Provided rates has incomplete/too many currencies");
+    return errors;
+  }
+
+  for (let counter = 0; counter < rates.length; counter++) {
+    const currentRate = rates[counter];
+    if (!config.currencies.includes(currentRate.currency.toUpperCase())) {
+      errors.push("Provided rates has one or more invalid currencies");
+    }
+
+    if (!(currentRate.buy && currentRate.sell)) {
+      errors.push("Provided rates is not allowed");
+    }
+
+    if (isNaN(currentRate.buy) || isNaN(currentRate.sell)) {
+      errors.push("Buy and sell rates should be numbers");
+    }
+  }
+  return errors;
 }

@@ -11,6 +11,9 @@ class ApiError {
   static serverError(msg) {
     return new ApiError(msg, "500");
   }
+  static unauthenticated(msg) {
+    return new ApiError(msg, "401");
+  }
 }
 
 export default ApiError;
