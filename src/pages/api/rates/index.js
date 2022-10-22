@@ -38,7 +38,6 @@ export default async function ratesHandler(req, res) {
   try {
     switch (req.method) {
       case "POST":
-        console.log(req.body)
         resPayload = await doCreateRates(req.body);
         httpResponseCode = 201;
         success = true;
