@@ -7,7 +7,7 @@ import Illustrations from "../components/landing-page/illustrations";
 import Security from "../components/landing-page/security";
 import Navbar from "../components/navbar";
 
-export default function Home() {
+export default function Home({ rates }) {
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <div className="position-relative">
         <Navbar />
-        <Hero />
+        <Hero rates={rates} />
         <Illustrations />
         <CTA_section />
         <Security />
@@ -24,4 +24,37 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getServerSideProps() {
+  let data;
+  try {
+    const res = await fetch("https://back-office.cobaltswap.com/api/rates");
+    data = await res.json();
+  } catch (error) {
+    data = {
+      success: false,
+      body: [
+        {
+          currency: "EURO",
+          buy: "?",
+          sell: "?",
+        },
+        {
+          currency: "GBP",
+          buy: "?",
+          sell: "?",
+        },
+        {
+          currency: "USD",
+          buy: "?",
+          sell: "?",
+        },
+      ],
+    };
+  }
+
+  return {
+    props: { rates: data.body },
+  };
 }

@@ -146,7 +146,7 @@ a {
     position: relative;
     margin-left: -3rem;
     margin-right: -3rem;
-    .row {
+    .container > div {
       background-color: var(--teal-green);
       @media (min-width: $md) {
         margin-top: -5rem;
