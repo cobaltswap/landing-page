@@ -50,6 +50,11 @@ export async function getServerSideProps() {
           buy: "?",
           sell: "?",
         },
+        {
+          currency: "CAD",
+          buy: "?",
+          sell: "?",
+        },
       ],
     };
   }

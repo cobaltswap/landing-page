@@ -2,9 +2,10 @@ import Link from "next/link";
 
 function Hero({ rates }) {
   const currencyMap = {
-    usd: { symbol: "bi-currency-dollar", name: "US Dollars" },
-    gbp: { symbol: "bi-currency-pound", name: "GB Pounds" },
-    euro: { symbol: "bi-currency-euro", name: "Euro" },
+    usd: { symbol: "bi-currency-dollar" },
+    gbp: { symbol: "bi-currency-pound" },
+    euro: { symbol: "bi-currency-euro" },
+    cad: { symbol: "bi-currency-dollar" },
   };
   return (
     <section
@@ -60,7 +61,7 @@ function Hero({ rates }) {
                   <div className="d-flex justify-content-evenly align-items-center px-4">
                     {rates.map((_rate, index) => (
                       <div className="px-1" key={index}>
-                        <small>{currencyMap[_rate.currency.toLowerCase()]?.name}</small>
+                        <small>{_rate.currency.toUpperCase()}</small>
                         <div className="fw-500">
                           {_rate.buy}/
                           <i
@@ -79,7 +80,7 @@ function Hero({ rates }) {
                   <div className="d-flex justify-content-evenly align-items-center px-4">
                     {rates.map((_rate, index) => (
                       <div className="px-1" key={index}>
-                        <small>{currencyMap[_rate.currency.toLowerCase()]?.name}</small>
+                        <small>{_rate.currency.toUpperCase()}</small>
                         <div className="fw-500">
                           {_rate.sell}/
                           <i
