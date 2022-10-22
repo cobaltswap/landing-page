@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Hero() {
+function Hero({ rates }) {
   return (
     <section
       id="hero"
@@ -109,3 +109,34 @@ function Hero() {
 }
 
 export default Hero;
+
+export async function getServerSideProps() {
+  const res = await fetch("https://back-office.cobaltswap.com/rates");
+  const data = await res.json();
+
+  const dummyRates = [
+    {
+      currency: "EURO",
+      buy: "?",
+      sell: "?",
+    },
+    {
+      currency: "GBP",
+      buy: "?",
+      sell: "?",
+    },
+    {
+      currency: "USD",
+      buy: "?",
+      sell: "?",
+    },
+  ];
+
+  let rates;
+
+  data.success ? (rates = data.body) : (rates = dummyRates);
+
+  return {
+    props: { rates },
+  };
+}
