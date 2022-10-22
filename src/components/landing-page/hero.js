@@ -1,6 +1,11 @@
 import Link from "next/link";
 
 function Hero({ rates }) {
+  const currencyMap = {
+    usd: { symbol: "bi-currency-dollar", name: "US Dollars" },
+    gbp: { symbol: "bi-currency-pound", name: "GB Pounds" },
+    euro: { symbol: "bi-currency-euro", name: "Euro" },
+  };
   return (
     <section
       id="hero"
@@ -44,59 +49,45 @@ function Hero({ rates }) {
           </div>
           <div className="hero-illustration-section rounded-3 align-self-stretch col-12 col-md-5 col-lg-5 col-xxl-5"></div>
         </div>
+
         <div className="rates mt-5 mt-md-0">
           <div className="container">
-            <div className="row col-md-11 rounded-3 col-lg-9 mx-md-auto mb-2 py-4 py-md-4 py-lg-3 py-xxl-4">
-              <header className="text-center mb-3 mb-lg-4 fw-bold">Daily FX rates</header>
-              <div className="d-flex flex-wrap gap-3 justify-content-center">
-                <div className="buy d-flex align-items-center col-9 col-md-5 p-0">
-                  <small className="fw-500 me-3">We buy</small>
-                  <div className="d-flex col-9 align-self-end align-items-center px-3 py-2 border border-1 bg-white rounded rounded-3">
-                    <div className="input-group">
-                      <button
-                        className="btn btn-primary-local dropdown-toggle me-3"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <span className="me-1" id="buy-currency-flag">
-                          $
-                        </span>{" "}
-                        USD
-                      </button>
-                      <ul className="dropdown-menu">
-                        <li>
-                          {/* <a className="dropdown-item" href="#">
-                            Action
-                          </a> */}
-                        </li>
-                      </ul>
-                    </div>
-                    <span id="buy-rate" className="fw-600">
-                      710/$
-                    </span>
+            <div className="row flex-wrap col-md-10 col-lg-9 mx-md-auto mb-2 p-3 py-4 rounded-3">
+              {/* Buy section */}
+              <div className="col-12 col-md-6">
+                <div className="p-3 mb-3 mx-2 mb-md-0 rounded-3 bg-primary-local text-white text-center">
+                  <p className="fw-500 mb-1">WE BUY</p>
+                  <div className="d-flex justify-content-evenly align-items-center px-4">
+                    {rates.map((_rate, index) => (
+                      <div className="px-1" key={index}>
+                        <small>{currencyMap[_rate.currency.toLowerCase()]?.name}</small>
+                        <div className="fw-500">
+                          {_rate.buy}/
+                          <i
+                            className={`bi ${currencyMap[_rate.currency.toLowerCase()]?.symbol}`}
+                          ></i>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <div className="sell d-flex align-items-center col-9 col-md-5 p-0">
-                  <small className="fw-500 me-3">We Sell</small>
-                  <div className="d-flex col-9 align-items-center px-3 py-2 border border-1 bg-white rounded rounded-3">
-                    <div className="input-group">
-                      <button
-                        className="btn btn-primary-local dropdown-toggle me-3"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <span className="me-1" id="buy-currency-flag">
-                          $
-                        </span>{" "}
-                        USD
-                      </button>
-                      <ul className="dropdown-menu"></ul>
-                    </div>
-                    <span id="buy-rate" className="fw-600">
-                      710/$
-                    </span>
+              </div>
+              {/* Sell section */}
+              <div className="col-12 col-md-6">
+                <div className="rounded-3 p-3 mx-2 bg-dark text-white text-center">
+                  <p className="fw-500 mb-1">WE SELL</p>
+                  <div className="d-flex justify-content-evenly align-items-center px-4">
+                    {rates.map((_rate, index) => (
+                      <div className="px-1" key={index}>
+                        <small>{currencyMap[_rate.currency.toLowerCase()]?.name}</small>
+                        <div className="fw-500">
+                          {_rate.sell}/
+                          <i
+                            className={`bi ${currencyMap[_rate.currency.toLowerCase()]?.symbol}`}
+                          ></i>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -109,34 +100,3 @@ function Hero({ rates }) {
 }
 
 export default Hero;
-
-export async function getServerSideProps() {
-  const res = await fetch("https://back-office.cobaltswap.com/rates");
-  const data = await res.json();
-
-  const dummyRates = [
-    {
-      currency: "EURO",
-      buy: "?",
-      sell: "?",
-    },
-    {
-      currency: "GBP",
-      buy: "?",
-      sell: "?",
-    },
-    {
-      currency: "USD",
-      buy: "?",
-      sell: "?",
-    },
-  ];
-
-  let rates;
-
-  data.success ? (rates = data.body) : (rates = dummyRates);
-
-  return {
-    props: { rates },
-  };
-}
