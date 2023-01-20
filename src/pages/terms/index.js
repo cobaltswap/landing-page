@@ -136,8 +136,12 @@ function TermsContact() {
           </p>
           <p className="mb-1">
             <span className="h6">Telephone: </span>
-            <Link href={`tel:+${config.contact.mobilePhone}`}>
-              <a>{parsePhoneNumberForView(config.contact.mobilePhone)}</a>
+            <Link href={`tel:+${config.contact.mobilePhone1}`}>
+              <a>{parsePhoneNumberForView(config.contact.mobilePhone1)}</a>
+            </Link>{" "}
+            <span className="fw-500"> OR </span>
+            <Link href={`tel:+${config.contact.mobilePhone2}`}>
+              <a>{parsePhoneNumberForView(config.contact.mobilePhone2, "uk")}</a>
             </Link>
           </p>
         </div>

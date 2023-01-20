@@ -38,7 +38,7 @@ const faqs = [
   {
     id: "eight",
     question: "How can I contact Cobalt?",
-    answer: `We are happy to answer any of your questions and inquiries 24/7. Please feel free to contact us via mail at contact@cobaltswap.com or give us a call at ${config.contact.mobilePhone} and be assured of a prompt response. Your concern is our concern.`,
+    answer: `We are happy to answer any of your questions and inquiries 24/7. Please feel free to contact us via mail at contact@cobaltswap.com or give us a call at ${config.contact.mobilePhone1} and be assured of a prompt response. Your concern is our concern.`,
   },
   {
     id: "nine",
@@ -70,8 +70,7 @@ function FAQ() {
                         data-bs-toggle="collapse"
                         data-bs-target={`#${faq?.id}`}
                         aria-expanded="true"
-                        aria-controls={`collapse-${faq?.id}`}
-                      >
+                        aria-controls={`collapse-${faq?.id}`}>
                         {faq?.question}
                       </button>
                     </p>
@@ -79,8 +78,7 @@ function FAQ() {
                       id={faq?.id}
                       className="accordion-collapse collapse"
                       aria-labelledby={`faq-header-${faq?.id}`}
-                      data-bs-parent="#faqAccordion"
-                    >
+                      data-bs-parent="#faqAccordion">
                       <div className="accordion-body">{faq?.answer}</div>
                     </div>
                   </div>
