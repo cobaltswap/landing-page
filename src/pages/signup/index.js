@@ -25,9 +25,8 @@ export default function Signup() {
             </div>
             <h1 className="h3 fw-500 mb-4 text-center text-md-start">Welcome to Cobalt</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae delectus, voluptate
-              repudiandae eum iure dicta fugiat temporibus enim dolorum animi veniam molestiae
-              aliquid dolore.
+              Welcome to our money transfer app! With just a few taps, you can easily and securely
+              send money to friends and family around the world. Thanks for choosing us!
             </p>
 
             <p></p>
@@ -49,8 +48,7 @@ function Dialog({ children, setShouldDisplayDialog }) {
   return (
     <div
       className="position-fixed top-0 start-0 end-0 bottom-0"
-      style={{ background: "rgba(0,0,0, 0.7)" }}
-    >
+      style={{ background: "rgba(0,0,0, 0.7)" }}>
       <div
         className="d-flex flex-column position-absolute top-50 start-50 translate-middle col-10 col-md-7 col-lg-4"
         style={{
@@ -58,8 +56,7 @@ function Dialog({ children, setShouldDisplayDialog }) {
           color: "black",
           padding: "1.5rem",
           borderRadius: "10px",
-        }}
-      >
+        }}>
         <div className="d-flex justify-content-end">
           <i className="bi bi-x-circle btn" onClick={() => setShouldDisplayDialog(false)}></i>
         </div>
